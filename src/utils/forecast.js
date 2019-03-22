@@ -9,7 +9,7 @@ const url = 'https://api.darksky.net/forecast/5ee579516d82ad5fc9f77ad1df53f85c/'
 		} else if (body.error) {
 			callback('Unable to find location', undefined)
 		} else {			
-			callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out. There is ' + body.currently.precipProbability + '% chance of rain')
+			callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out. Feels like ' +  body.currently.apparentTemperature + '. There is ' + body.currently.precipProbability + '% chance of rain. With humidity level to '+ body.currently.humidity)
 		}
 	})	 
 }	
